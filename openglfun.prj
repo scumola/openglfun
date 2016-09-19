@@ -6,7 +6,7 @@ auto_continue_multiline=true
 [file_prefs]
 final_new_line=true
 ensure_convert_new_lines=false
-strip_trailing_spaces=false
+strip_trailing_spaces=true
 replace_tabs=false
 
 [indentation]
@@ -20,6 +20,8 @@ indent_mode=2
 [project]
 name=openglfun
 base_path=/Users/stevenwebb/work_personal/openglfun
+description=
+file_patterns=
 
 [long line marker]
 long_line_behaviour=1
@@ -27,6 +29,7 @@ long_line_column=72
 
 [files]
 current_page=0
+FILE_NAME_0=40;Sh;0;EUTF-8;1;1;0;%2FUsers%2Fstevenwebb%2Fwork_personal%2Fopenglfun%2Fpull_submodules.sh;0;4
 
 [VTE]
 last_dir=/Users/stevenwebb
