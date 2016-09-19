@@ -3,7 +3,7 @@ SOURCES=test.c
 INCPATHS=submodules/glfw/include
 LIBPATHS=submodules/glfw/src /opt/local/lib
 LDFLAGS=-lpthread -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo
-CFLAGS=-c -Wall
+CFLAGS=-g -c -Wall
 CC=gcc
 
 # Automatic generation of some important lists
@@ -24,4 +24,4 @@ distclean: clean
 	rm -f $(BINARY)
 
 clean:
-	rm -f $(OBJECTS) $(BINARY)
+	rm -f $(OBJECTS)

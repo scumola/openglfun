@@ -22,7 +22,22 @@
  */
 
 #include <stdio.h>
+#include <string.h>
+#include <math.h>
 #include <GLFW/glfw3.h>
+
+static void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) {
+	static int last_len=0;
+	int a;
+	char str[80];
+	for (a=0;a<last_len;a++) {
+		printf("%c",8);
+	}
+	sprintf(str,"M: %d, %d    ",(int) floor(xpos), (int) floor(ypos));
+	fputs(str,stdout);
+	fflush(stdout);
+	last_len = strlen(str);
+}
 
 int main(void)
 {
@@ -46,6 +61,8 @@ int main(void)
 
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
+
+	glfwSetCursorPosCallback(window, cursor_pos_callback);
 
 	/* Loop until the user closes the window */
 	while (!glfwWindowShouldClose(window)) {
