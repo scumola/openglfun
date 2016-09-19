@@ -7,4 +7,3 @@ git submodule update
 cd submodules/glfw
 cmake .
 make -j4
-

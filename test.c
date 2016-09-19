@@ -26,38 +26,36 @@
 
 int main(void)
 {
-    GLFWwindow* window;
+	GLFWwindow* window;
 
-    /* Initialize the library */
-    if (!glfwInit())
-        return -1;
+	/* Initialize the library */
+	if (!glfwInit())
+		return -1;
 
-    printf("Compiled against GLFW %i.%i.%i\n",
-       GLFW_VERSION_MAJOR,
-       GLFW_VERSION_MINOR,
-       GLFW_VERSION_REVISION);
+	printf("Compiled against GLFW %i.%i.%i\n",
+		GLFW_VERSION_MAJOR,
+		GLFW_VERSION_MINOR,
+		GLFW_VERSION_REVISION);
 
-    /* Create a windowed mode window and its OpenGL context */
-    window = glfwCreateWindow(640, 480, "test", NULL, NULL);
-    if (!window)
-    {
-        glfwTerminate();
-        return -1;
-    }
+	/* Create a windowed mode window and its OpenGL context */
+	window = glfwCreateWindow(640, 480, "test", NULL, NULL);
+	if (!window) {
+		glfwTerminate();
+		return -1;
+	}
 
-    /* Make the window's context current */
-    glfwMakeContextCurrent(window);
+	/* Make the window's context current */
+	glfwMakeContextCurrent(window);
 
-    /* Loop until the user closes the window */
-    while (!glfwWindowShouldClose(window))
-    {
-        /* Render here */
+	/* Loop until the user closes the window */
+	while (!glfwWindowShouldClose(window)) {
+		/* Render here */
+		glClearColor(0.2f, 0.3f, 0.5f, 1.0f);
 		glClear( GL_COLOR_BUFFER_BIT);
 		glGetError();
 		glLoadIdentity();
 
-		glBegin(GL_TRIANGLES);
-		{
+		glBegin(GL_TRIANGLES); {
 			glColor3f(1.0f, 1.0f, 1.0f);
 			glVertex2f(0.0f, 1.0f);
 			glColor3f(1.0f, 0.0f, 0.0f);
@@ -66,16 +64,15 @@ int main(void)
 			glVertex2f(1.0f, -1.0f);
 		}
 		glEnd();
-
 		glFlush();
 
-        /* Swap front and back buffers */
-        glfwSwapBuffers(window);
+		/* Swap front and back buffers */
+		glfwSwapBuffers(window);
 
-        /* Poll for and process events */
-        glfwPollEvents();
-    }
+		/* Poll for and process events */
+		glfwPollEvents();
+	}
 
-    glfwTerminate();
-    return 0;
+	glfwTerminate();
+	return 0;
 }
