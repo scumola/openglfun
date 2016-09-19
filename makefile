@@ -1,8 +1,8 @@
 PROJECT=test
 SOURCES=test.c
-INCPATHS=submodules/glfw/include
+INCPATHS=submodules/glfw/include /opt/local/include
 LIBPATHS=submodules/glfw/src /opt/local/lib
-LDFLAGS=-lpthread -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo
+LDFLAGS=-lpthread -lglfw3 -lGLU -lGLUT -framework Cocoa -framework OpenGL -framework IOKit -framework CoreVideo
 CFLAGS=-g -c -Wall
 CC=gcc
 
